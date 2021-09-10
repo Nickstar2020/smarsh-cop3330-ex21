@@ -13,8 +13,10 @@ public class assignment21 {
         //ask for the number of month
         System.out.println("Please enter the number of the month");
         int monthNumber = scan.nextInt();
+        Boolean incorrect = Boolean.FALSE;
 
         String month = null;
+
 
         switch(monthNumber) {
             case 1:
@@ -66,12 +68,13 @@ public class assignment21 {
                 break;
 
             default:
-                System.out.println("Entered number doesn't correlate to a month");
-                System.exit(0);
+                incorrect = Boolean.TRUE;
+                break;
         }
 
-        //print out the month
-        System.out.println("The name of the month is " + month);
+        //print out the month or error code (only doing it this way b/c the assignment says so)
+        String message = !incorrect ? "The name of the month is " + month : "Entered number doesn't correlate to a month";
+        System.out.println(message);
 
     }
 }
